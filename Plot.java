@@ -2,11 +2,13 @@
 public class Plot {
 	private int x, y, width, depth;
 	
+	// Constructor no-args (set default Plot with width and depth of 1.)
 	public Plot() {
 		width = 1;
 		depth = 1;
 	}
 	
+	//1. Constructor: Generate constructor to set all attributes to past parameters
 	public Plot(int x, int y, int width, int depth) {
 		this.x = x;
 		this.y = y;
@@ -14,13 +16,15 @@ public class Plot {
 		this.depth = depth;
 	}
 	
+	//Copy constructor
 	public Plot(Plot otherPlot) {
-		x = otherPlot.x;
-		y = otherPlot.y;
-		width = otherPlot.width;
-		depth = otherPlot.depth;
+		this.x = otherPlot.x;
+		this.y = otherPlot.y;
+		this.width = otherPlot.width;
+		this.depth = otherPlot.depth;
 	}
 	
+	//2. Generate Getter and setter
 	public int getX() {
 		return this.x;
 	}
@@ -53,17 +57,11 @@ public class Plot {
 		this.width = width;
 	}
 	
-	
-	
+	/*
+	 * 3. Create method overlaps that take Plot instance and determines whether its overlap?
+	 * Compare backward by the ways does NOT overlap
+	 */
 	public boolean overlaps(Plot plot) {
-//		if (((x<=plot.x && x<=(plot.x+plot.width)) && (y<=plot.y && y<=plot.y+plot.depth)) ||
-//		())
-		
-		
-//		int x1 = otherPlot.x;
-//		int y1 = otherPlot.y;
-//		int w1 = otherPlot.width;
-//		int d1 = otherPlot.depth;
 		if (this.x >= (plot.x + plot.width)) return false;
 		if (this.y >= (plot.y + plot.depth)) return false;
 		if ((this.x + width) <= plot.x) return false;
@@ -71,6 +69,12 @@ public class Plot {
 		
 		return true;
 	}
+	
+	/*
+	 * 4. Create a method encompasses that take a Plot instance and determines  
+	 * if the given plot is encompassed by (is contained by) this plot. Note that the determination 
+	 * should be inclusive, in other words, if an edge lies on the edge of the current plot, this is acceptable.
+	 */
 	
 	public boolean encompasses(Plot plot) {
 		if (this.x <= plot.x 
@@ -82,6 +86,9 @@ public class Plot {
 		return false;
 	}
 	
+	/*
+	 * 5. Create a toStrong method that represent a Plot object in the following String format. x,y,width,depth
+	 */
 	public String toString() {
 		return this.x + "," + this.y + "," + this.width + "," + this.depth;
 	}

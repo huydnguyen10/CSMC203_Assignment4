@@ -294,22 +294,22 @@ public class MgmCompanyGui extends Application {
 			switch (rtnValue) {
 			case -1: {
 				alertPropertiesArrayFull();
-				plotFrame.getChildren().remove(propRectangle);
+				plotFrame.getChildren().remove(plotFrame.getChildren().size() - 1);
 				break;
 			}
 			case -2: {
 				alertPropertyIsNull(property);
-				plotFrame.getChildren().remove(propRectangle);
+				plotFrame.getChildren().remove(plotFrame.getChildren().size() - 1);
 				break;
 			}
 			case -3: {
 				alertDoesNotEncompass(property);
-				plotFrame.getChildren().remove(propRectangle);
+				plotFrame.getChildren().remove(plotFrame.getChildren().size() - 1);
 				break;
 			}
 			case -4: {
 				alertOverlap(property);
-				plotFrame.getChildren().remove(propRectangle);
+				plotFrame.getChildren().remove(plotFrame.getChildren().size() - 1);
 				break;
 			}
 			default: // the case where property is valid and created - now display icon

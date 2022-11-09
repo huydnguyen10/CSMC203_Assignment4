@@ -7,6 +7,7 @@ public class Property {
 	private String owner;
 	private Plot plot;
 	
+	//Constructor: no-args
 	public Property() {
 		this.propertyName = "";
 		this.city = "";
@@ -14,6 +15,7 @@ public class Property {
 		this.owner = "";
 	}
 	
+	//Constructor: Another constructor to set all attributes to past parameters
 	public Property(String propertyName, String city, double rentAmount, String onwer) {
 		this.propertyName = propertyName;
 		this.city = city;
@@ -22,6 +24,7 @@ public class Property {
 		this.plot = new Plot();
 	}
 	
+	//Constructor: Another constructor to set all attributes to past parameters
 	public Property(String propertyName, String city, double rentAmount, String onwer, int x, int y, int width, int depth) {
 		this.propertyName = propertyName;
 		this.city = city;
@@ -30,6 +33,7 @@ public class Property {
 		this.plot = new Plot(x, y, width, depth);
 	}
 	
+	//Copy constructor
 	public Property (Property otherProperty) {
 		city = otherProperty.city;
 		propertyName = otherProperty.propertyName;
@@ -37,8 +41,9 @@ public class Property {
 		rentAmount = otherProperty.rentAmount;
 	}
 	
+	//Generate getter and setter for all variables
 	public String getPropertyName() {
-		return propertyName;
+		return this.propertyName;
 	}
 
 	public void setPropertyName(String propertyName) {
@@ -46,7 +51,7 @@ public class Property {
 	}
 
 	public String getCity() {
-		return city;
+		return this.city;
 	}
 
 	public void setCity(String city) {
@@ -54,7 +59,7 @@ public class Property {
 	}
 
 	public double getRentAmount() {
-		return rentAmount;
+		return this.rentAmount;
 	}
 
 	public void setRentAmount(double rentAmount) {
@@ -62,23 +67,24 @@ public class Property {
 	}
 
 	public String getOwner() {
-		return owner;
+		return this.owner;
 	}
 
 	public void setOwner(String onwer) {
 		this.owner = onwer;
 	}
 	
-	public String toString() {
-		return propertyName + "," + city + "," + owner + "," + rentAmount ;
-	}
-
 	public Plot getPlot() {
-		return plot;
+		return this.plot;
 	}
 
 	public void setPlot(Plot plot) {
 		this.plot = plot;
 	}
-	
+	/*
+	 * 3. Represents the information of all the properties in the properties array.
+	 */
+	public String toString() {
+		return propertyName + "," + city + "," + owner + "," + rentAmount;
+	}
 }

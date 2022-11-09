@@ -13,7 +13,7 @@ import org.junit.Test;
  * @version 7/11/2022
  * 
  */
-public class PlotTestGFA {
+public class PlotTestSudent {
 	private Plot plot1, plot2, plot5, plot3;
 
 	@Before

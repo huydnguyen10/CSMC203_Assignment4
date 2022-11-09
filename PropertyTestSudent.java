@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
  * @author Farnaz Eivazi
  * @version 7/11/2022
  */
-class PropertyTestGFA {
+class PropertyTestStudent {
 	Property propertyOne;
 	Property propertyTwo;
 
